@@ -1,0 +1,53 @@
+.about {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(246, 246, 229);
+
+  h2 {
+    padding: 0px 20px;
+  }
+
+  .title {
+    background-color: lightcoral;
+    margin-top: 0px;
+  }
+
+  .vision-title {
+    background-color: lightgreen;
+  }
+
+  h4 {
+    padding: 0px 100px;
+  }
+
+  .solve-title {
+    background-color: lightsteelblue;
+  }
+
+  ol {
+    padding: 0px 100px;
+  }
+
+  .comunity-title {
+    background-color: lightgray;
+  }
+
+  .join-title {
+    background-color: lightblue;
+  }
+
+  .join-btn {
+    @include base-btn();
+    margin: 0px 400px;
+    font-size: 2em;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    
+  }
+
+}
