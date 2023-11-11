@@ -35,36 +35,31 @@ const NavigationComponent = (props) => {
     <div className='nav-wrapper'>
       <div className='left-side'>
         <div className='nav-link-wrapper'>
-          <NavLink exact to="/" activeClassName="nav-link-active">Home</NavLink>
-        </div>
-
-        <div className='nav-link-wrapper'>
-          <NavLink to="/about-me" activeClassName="nav-link-active">About</NavLink>
-        </div>
-
-        <div className='nav-link-wrapper'>
-          <NavLink to="/contact" activeClassName="nav-link-active">Contact</NavLink>
-        </div>
-
-        <div className='nav-link-wrapper'>
-          <NavLink to="/blog" activeClassName="nav-link-active">Blog</NavLink>
+          <NavLink exact to="/" activeClassName="nav-link-active">Profiles</NavLink>
         </div>
 
         {props.loggedInStatus === "LOGGED_IN" ? (
-          dynamicLink("/portfolio-manager", "Portfolio Manager")
+          dynamicLink("/portfolio-manager", "My Profile")
         ) : null}
 
       </div>
-      <div className='right-side'>
-        IMANOL GASTON
 
-        {props.loggedInStatus === 'LOGGED_IN' ? (
+      {props.loggedInStatus === 'LOGGED_IN' &&
+        <div className='right-side'>
+          IMANOL GASTON
+
           <a onClick={handleSignOut}>
             <FontAwesomeIcon icon="sign-out-alt" />
           </a>
-        ) : null}
-      </div>
+        </div>
+      }
+      
+      {props.loggedInStatus !== 'LOGGED_IN' &&
+        <div className='right-side'>
+          <NavLink exact to="/auth" activeClassName="nav-link-active">Login</NavLink>
+        </div>
+      }
     </div>
   );
 }
-export default withRouter (NavigationComponent);
+export default withRouter(NavigationComponent);

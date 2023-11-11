@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class PortfolioItem extends Component {
   constructor(props) {
@@ -9,33 +11,18 @@ export default class PortfolioItem extends Component {
     };
   }
 
-  handleMouseEnter() {
-    this.setState({portoflioItemClass: 'image-blur'});
-  }
-
-  handleMouseLeave() {
-    this.setState({portoflioItemClass: ""});
-  }
-
   render() {
-    const { id, description, thumb_image_url, logo_url } = this.props.item;
+    const { id, brief_description, fullname } = this.props.item;
     return (
-      <div className="portfolio-item-wrapper" 
-      onMouseEnter={() => this.handleMouseEnter()}
-      onMouseLeave={() => this.handleMouseLeave()}
-      >
-        <div
-          className={"portfolio-img-background " + this.state.portoflioItemClass}
-          style={{
-            backgroundImage: "url(" + thumb_image_url + ")"
-          }}
-        />
-        <div className="img-text-wrapper">
-          <div className="logo-wrapper">
-            <img src={logo_url} />
+      <div className="portfolio-item-wrapper">
+        <div className="portfolio-item-wrapper-info">
+          <div className="title">
+            <h3>{fullname}</h3>
           </div>
-
-          <div className="subtitle">{description}</div>
+          <div className="subtitle">{brief_description}</div>
+        </div>
+        <div className="portfolio-item-wrapper-right">
+          <Link to={`profiles/${id}`} className="show-profiles">{fullname}'s full profile</Link>
         </div>
       </div>
     )

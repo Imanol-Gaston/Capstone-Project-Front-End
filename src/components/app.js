@@ -10,7 +10,7 @@ import FooterContainer from './footer/footer';
 import Home from './pages/home';
 import About from './pages/about';
 import Contact from './pages/contact';
-import Blog from './pages/blog';
+import ProfileDetails from './pages/profile-details';
 import BlogDetail from './pages/blog-detail';
 import PortfolioManager from './pages/portfolio-manager';
 import PortfolioDetail from './portfolio/portfolio-detail';
@@ -114,8 +114,8 @@ export default class App extends Component {
 
               <Route path="/about-me" component={About} />
               <Route path="/contact" component={Contact} />
-              <Route path="/blog" component={Blog} />
               <Route path="/b/:slug" component={BlogDetail} />
+              <Route path="/profiles/:id" component={ProfileDetails} />
               {this.state.loggedInStatus === 'LOGGED_IN' ? (
                 this.authorizedPages()
               ) : null}

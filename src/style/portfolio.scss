@@ -1,48 +1,48 @@
 .portfolio-items-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
 
   .portfolio-item-wrapper {
     position: relative;
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    padding: 20px;
 
-    .portfolio-img-background {
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 350px;
-      width: 100%;
-    }
-
-    .img-text-wrapper {
-      position: absolute;
-      top: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      text-align: center;
-      padding-left: 100px;
-      padding-right: 100px;
+    .portfolio-item-wrapper-info {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
 
       .subtitle {
-        transition: 1s ease-in-out;
-        color: transparent;
+        font-family: "Titillium Web", sans-serif;
+        color: $charcoal;
+        // padding: 5px 0px;
+        width: 100%;
+        border-top: 0px;
+        border-right: 0px;
+        border-left: 0px;
+        border-bottom: 1px solid $teal;
+        background-color: transparent;
+        transition: 0.5 all ease-in-out;
+        font-size: 1.1em;
+        margin-bottom: 21px;
+
+        &:focus {
+          outline: none;
+          border-bottom: 1px solid $dark-teal;
+        }
       }
     }
 
-    .img-text-wrapper:hover .subtitle {
-      color: $teal;
-      font-weight: 400;
-    }
+    .portfolio-item-wrapper-right {
+      cursor: pointer;
+      @include base-btn;
+      text-decoration: none;
+      padding: 10px;
 
-    .logo-wrapper img {
-      width: 50%;
+      a {
+        text-decoration: none;
+        color: black;
+      }
     }
   }
-}
-
-.image-blur {
-  transition: 1s;
-  filter: brightness(10%);
 }

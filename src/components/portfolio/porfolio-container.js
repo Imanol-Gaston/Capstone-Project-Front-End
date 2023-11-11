@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import axios from 'axios';
 
 import PortfolioItem from "./portfolio-item";
+import ProfileDetails from "../pages/profile-details";
 
 export default class PortfolioContainer extends Component {
   constructor() {
     super();
 
     this.state = {
-      pageTitle: "Welcome to my portfolio",
       isLoading: false,
       data: []
     };
@@ -26,10 +26,10 @@ export default class PortfolioContainer extends Component {
 
   getPortfolioItems() {
     axios
-      .get("https://ikeralareki.devcamp.space/portfolio/portfolio_items")
+      .get("http://127.0.0.1:5000/api/v1/profiles/")
       .then(response => {
         this.setState({
-          data: response.data.portfolio_items
+          data: response.data.profiles
         })
       })
       .catch(error => {
@@ -45,6 +45,7 @@ export default class PortfolioContainer extends Component {
     });
   }
 
+
   componentDidMount() {
     this.getPortfolioItems();
   }
@@ -56,17 +57,6 @@ export default class PortfolioContainer extends Component {
 
     return (
       <div className="portfolio-items-wrapper">
-
-        <button className="btn" onClick={() => this.handleFilter('eCommerce')}>
-          eCommerce
-        </button>
-        <button className="btn" onClick={() => this.handleFilter('Scheduling')}>
-          Scheduling
-        </button>
-        <button className="btn" onClick={() => this.handleFilter('Enterprise')}>
-          Enterprise
-        </button>
-
         {this.portfolioItems()}
       </div>
     )
