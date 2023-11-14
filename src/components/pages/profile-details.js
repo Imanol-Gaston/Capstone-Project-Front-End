@@ -1,18 +1,44 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
-export default function (props) {
-  // const {
-  //   fullname,
-  //   full_description
-  // } = this.props.item;
+export default class ProfileDetails extends Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      isLoading: true,
+      data: []
+    };
+  }
 
-  return (
-    <div>
-      {/* <h2 className='profile-detail-name'>{fullname}</h2>
-      <p className='detailed-description'>{full_description}</p> */}
-      <h2>Perfil de {props.match.params.slug}</h2>
-    </div >
-  );
+  getProfile() {
+    axios
+      .get(`http://127.0.0.1:5000/api/v1/profiles/1`)
+      .then(response => {
+        this.setState({
+          data: response.data.profile,
+          isLoading: false
+        })
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  componentDidMount() {
+    this.getProfile();
+  }
+
+  render() {
+    if (this.state.isLoading) {
+      return <div>Loading...</div>
+    }
+
+    return (
+      <div className="portfolio-items-wrapper">
+        <h2>{this.state.data.fullname}</h2>
+        <p>{this.state.data.full_description}</p>
+      </div>
+    )
+  }
 }
-

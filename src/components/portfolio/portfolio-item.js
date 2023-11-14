@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class PortfolioItem extends Component {
   constructor(props) {

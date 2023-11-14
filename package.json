@@ -1,18 +1,17 @@
 {
-  "name": "onsiterr-project",
+  "name": "sitework-project",
   "version": "1.0.0",
   "description": "marketplace for freelance inspectors",
   "scripts": {
     "preinstall": "npm set audit false",
-    "start": "webpack-dev-server --config webpack/dev.config.js --watch",
+    "start": "webpack-dev-server --config webpack/dev.config.js --watch serve dist",
     "build": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js --progress --display-error-details --color",
-    "heroku-postbuild": "npm run build",
     "precommit": "eslint src",
     "prod": "NODE_ENV=production node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Imanol-Gaston/onsiterr.git"
+    "url": "https://github.com/Imanol-Gaston/Capstone-Project-Front-End.git"
   },
   "keywords": [
     "es6",
@@ -70,6 +69,7 @@
     "react-router-dom": "5.1.2",
     "redux": "4.0.5",
     "sass-loader": "^7.1.0",
+    "serve": "^14.2.1",
     "style-loader": "^0.21.0",
     "webpack": "4.42.1",
     "webpack-cli": "3.3.11",
