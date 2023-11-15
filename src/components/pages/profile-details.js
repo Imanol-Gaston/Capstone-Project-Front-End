@@ -15,7 +15,7 @@ export default class ProfileDetails extends Component {
 
   getProfile() {
     axios
-      .get(`http://127.0.0.1:5000/api/v1/profiles/${this.props.match.params.slug}`)
+      .get(`${process.env.API_URL}/api/v1/profiles/${this.props.match.params.slug}`)
       .then(response => {
         this.setState({
           data: response.data.profile,

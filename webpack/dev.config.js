@@ -60,7 +60,8 @@ module.exports = webpackMerge(webpackCommon, {
   plugins: [
     new DefinePlugin({
       'process.env': {
-        NODE_ENV: "'development'"
+        NODE_ENV: "'development'",
+        API_URL: JSON.stringify('http://127.0.0.1:5000')
       }
     }),
     new HtmlWebpackPlugin({

@@ -25,7 +25,7 @@ export default class PortfolioContainer extends Component {
 
   getPortfolioItems() {
     axios
-      .get("http://127.0.0.1:5000/api/v1/profiles")
+      .get(`${process.env.API_URL}/api/v1/profiles`)
       .then(response => {
         this.setState({
           data: response.data.profiles
