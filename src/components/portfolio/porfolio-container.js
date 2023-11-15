@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from 'axios';
 
 import PortfolioItem from "./portfolio-item";
-import ProfileDetails from "../pages/profile-details";
 
 export default class PortfolioContainer extends Component {
   constructor() {
@@ -26,7 +25,7 @@ export default class PortfolioContainer extends Component {
 
   getPortfolioItems() {
     axios
-      .get("http://127.0.0.1:5000/api/v1/profiles/")
+      .get("http://127.0.0.1:5000/api/v1/profiles")
       .then(response => {
         this.setState({
           data: response.data.profiles
