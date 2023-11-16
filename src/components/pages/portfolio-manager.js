@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import PortfolioSidebarList from '../portfolio/portfolio-sidebar-list';
 import PortfolioForm from '../portfolio/portfolio-form';
 
 export default class PortfolioManager extends Component {
@@ -89,7 +88,6 @@ export default class PortfolioManager extends Component {
   render() {
     return (
       <div className='portfolio-manager-wrapper'>
-        <div className='left-column'>
           <PortfolioForm
             handleNewFormSubmission={this.handleNewFormSubmission}
             handleEditFormSubmission={this.handleEditFormSubmission}
@@ -98,15 +96,6 @@ export default class PortfolioManager extends Component {
             portfolioToEdit={this.state.portfolioToEdit}
           />
         </div>
-
-        <div className='right-column'>
-          <PortfolioSidebarList
-            handleDeleteClick={this.handleDeleteClick}
-            data={this.state.portfolioItems}
-            handleEditClick={this.handleEditClick}
-          />
-        </div>
-      </div>
     );
   }
 }
