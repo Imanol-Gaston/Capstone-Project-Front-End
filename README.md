@@ -1,4 +1,4 @@
-# Frontend Project Name
+# Freelance Industrial Inspectors Application Documentation Front End
 
 This is the frontend repository for the freelance industrial inspectors application.
 
