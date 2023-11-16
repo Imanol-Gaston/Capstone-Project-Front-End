@@ -21,38 +21,38 @@ The frontend application is built in React and provides a user interface to inte
 
 Install dependencies:
 
-npm install
+#### npm install
 
-Usage
+#### Usage
 Make sure to have the backend running before starting the frontend.
 
-Start the application:
+#### Start the application:
 
 npm start
 
 The application will be available at http://localhost:3000.
 
-Configuration
+#### Configuration
 Before starting the application, make sure to correctly configure the backend URL in the configuration file (e.g., src/config.js).
 
-Contribution
+#### Contribution
 If you want to contribute to the development of the application, follow these steps:
 
-Fork the repository.
+#### Fork the repository.
 
-Create a new branch for your feature or bug fix:
+#### Create a new branch for your feature or bug fix:
 
 git checkout -b feature-new
 
-Make your changes and commit them:
+#### Make your changes and commit them:
 
 git commit -m "Description of your changes"
 
-Push your changes to your fork:
+#### Push your changes to your fork:
 
 git push origin feature-new
 
-Open a pull request on the main repository.
+#### Open a pull request on the main repository.
 
-License
+#### License
 This project is licensed under the MIT License.
