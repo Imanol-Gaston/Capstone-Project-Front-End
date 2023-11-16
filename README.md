@@ -32,10 +32,10 @@ npm start
 
 The application will be available at http://localhost:3000.
 
-#### Configuration
+## Configuration
 Before starting the application, make sure to correctly configure the backend URL in the configuration file (e.g., src/config.js).
 
-#### Contribution
+## Contribution
 If you want to contribute to the development of the application, follow these steps:
 
 #### Fork the repository.
